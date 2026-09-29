@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import PageTransition from "./components/PageTransition";
 import "./App.css";
 
 export default function App() {
   const navigate = useNavigate();
   return (
+    <PageTransition>
     <div id="landing">
 
       {/* Navbar */}
@@ -13,8 +15,8 @@ export default function App() {
           <span id="brand-name">RoadWatch</span>
         </div>
         <div id="nav-links">
-          <a href="#how-it-works">How it works</a>
-          <a href="#stats">Impact</a>
+          <a href="#how-it-works" onClick={(e) => { e.preventDefault(); document.getElementById("how-it-works").scrollIntoView({ behavior: "smooth" }); }}>How it works</a>
+          <a href="#stats" onClick={(e) => { e.preventDefault(); document.getElementById("stats").scrollIntoView({ behavior: "smooth" }); }}>Impact</a>
         </div>
       </nav>
 
@@ -102,5 +104,6 @@ export default function App() {
       </footer>
 
     </div>
+    </PageTransition>
   );
 }
