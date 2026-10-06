@@ -110,7 +110,10 @@
 
 /* ── Buttons ── */
 .btn {
-  padding: 11px 26px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
   font-size: 14px;
   font-weight: 500;
   border-radius: 6px;
@@ -118,6 +121,14 @@
   font-family: var(--sans);
   border: 1px solid transparent;
   line-height: 1;
+  white-space: nowrap;
+}
+
+.btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .btn-primary {

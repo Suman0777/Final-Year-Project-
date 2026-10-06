@@ -30,8 +30,14 @@ export default function App() {
           for faster repair.
         </p>
         <div id="hero-actions">
-          <button className="btn btn-primary" onClick={() => navigate("/report")}>📸 Report a Pothole</button>
-          <button className="btn btn-outline" onClick={() => navigate("/dashboard")}>📊 View Dashboard</button>
+          <button className="btn btn-primary" onClick={() => navigate("/report")}>
+            <img src="dual-camera.png" alt="" />
+            Report a Pothole
+          </button>
+          <button className="btn btn-outline" onClick={() => navigate("/dashboard")}>
+            <img src="performance.png" alt="" />
+            View Dashboard
+          </button>
         </div>
         <p id="hero-note">No account needed to submit a report.</p>
       </section>
@@ -100,7 +106,7 @@ export default function App() {
       </section>
 
       <footer id="footer">
-        <span>© 2025 RoadWatch — Pothole Detection & Reporting Platform</span>
+        <span>© 2026 RoadWatch — Pothole Detection & Reporting Platform</span>
       </footer>
 
     </div>

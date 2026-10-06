@@ -1,0 +1,386 @@
+/* ── Page ── */
+#report-page {
+  height: 100svh;
+  overflow: hidden;
+  background: #101116;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Navbar ── */
+#report-nav {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  border-bottom: 1px solid #1e2028;
+  box-sizing: border-box;
+  background: #101116;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#report-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#report-brand-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #a855f7;
+  display: inline-block;
+}
+
+#report-brand-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #f3f4f6;
+  letter-spacing: -0.3px;
+}
+
+#report-nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+#report-nav-links a {
+  font-size: 14px;
+  color: #6b7280;
+  text-decoration: none;
+}
+
+#report-nav-links a:hover {
+  color: #9ca3af;
+}
+
+/* ── Heading ── */
+#report-heading {
+  text-align: center;
+  margin: 24px 0 16px;
+}
+
+#report-heading h1 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #f3f4f6;
+  letter-spacing: -1px;
+  margin: 0 0 6px;
+}
+
+#report-heading p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ── Cards ── */
+#report-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: 1080px;
+  padding: 0 24px;
+  box-sizing: border-box;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+.report-card {
+  background: #14151b;
+  border: 1px solid #292d38;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Upload zone ── */
+#upload-zone {
+  flex: 1;
+  border: 1.5px dashed #374151;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  min-height: 180px;
+}
+
+#upload-zone:hover,
+#upload-zone.drag-active {
+  border-color: #a855f7;
+}
+
+#upload-icon-wrap {
+  margin-bottom: 2px;
+}
+
+#upload-icon-wrap svg {
+  width: 36px;
+  height: 36px;
+}
+
+#upload-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #f3f4f6;
+  margin: 0;
+}
+
+#upload-sub {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+#upload-hint {
+  font-size: 11px;
+  color: #4b5563;
+  margin: 0;
+}
+
+#upload-preview {
+  width: 100%;
+  height: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+#camera-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  align-self: center;
+  padding: 9px 20px;
+  background: transparent;
+  border: 1px solid #292d38;
+  border-radius: 6px;
+  color: #f3f4f6;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+#camera-btn:hover {
+  border-color: #a855f7;
+  background: rgba(168, 85, 247, 0.06);
+}
+
+/* ── Form fields ── */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f3f4f6;
+}
+
+.field-input {
+  background: #0d0e13;
+  border: 1px solid #292d38;
+  border-radius: 6px;
+  color: #9ca3af;
+  font-size: 13px;
+  font-family: inherit;
+  padding: 8px 10px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.field-input:focus {
+  border-color: #a855f7;
+  color: #f3f4f6;
+}
+
+.field-input::placeholder {
+  color: #4b5563;
+}
+
+.field-textarea {
+  resize: none;
+  min-height: 72px;
+}
+
+/* ── Location row ── */
+#location-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#location-input-wrap {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#location-input-wrap svg {
+  position: absolute;
+  left: 10px;
+  flex-shrink: 0;
+}
+
+#location-input-wrap .field-input {
+  padding-left: 34px;
+}
+
+#location-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 14px;
+  background: transparent;
+  border: 1px solid #a855f7;
+  border-radius: 6px;
+  color: #f3f4f6;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+#location-btn:hover {
+  background: rgba(168, 85, 247, 0.1);
+}
+
+/* ── Report type ── */
+#report-types {
+  display: flex;
+  gap: 10px;
+}
+
+.type-option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 14px;
+  background: #0d0e13;
+  border: 1px solid #292d38;
+  border-radius: 6px;
+  color: #9ca3af;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.type-option.type-selected {
+  border-color: #a855f7;
+  color: #f3f4f6;
+}
+
+.type-radio {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid #4b5563;
+  flex-shrink: 0;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.type-radio-selected {
+  border-color: #a855f7;
+  background: #a855f7;
+}
+
+/* ── Submit ── */
+#submit-btn {
+  width: 100%;
+  padding: 5px;
+  background: #a855f7;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+#submit-btn:hover {
+  opacity: 0.88;
+}
+
+#no-account {
+  text-align: center;
+  font-size: 13px;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* ── Feature strip ── */
+#feature-strip {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  border-top: 1px solid #1e2028;
+  margin-top: 1px;
+  margin-bottom: 19px;
+}
+
+.feature-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 24px;
+  justify-content: center;
+}
+
+.feature-item:first-child {
+  padding-left: 0;
+}
+
+.feature-item:last-child {
+  padding-right: 0;
+}
+
+.feature-divider {
+  width: 1px;
+  height: 36px;
+  background: #1e2028;
+  flex-shrink: 0;
+}
+
+.fi-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f3f4f6;
+}
+
+.fi-sub {
+  font-size: 12px;
+  color: #6b7280;
+}
