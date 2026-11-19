@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PageTransition from "../components/PageTransition";
@@ -39,7 +38,7 @@ export default function Report() {
       setCameraError(
         error.name === "NotAllowedError"
           ? "Camera permission denied. Please allow camera access."
-          : error.message || "Unable to access camera."
+          : error.message || "Unable to access camera.",
       );
     }
   }
@@ -86,7 +85,6 @@ export default function Report() {
   return (
     <PageTransition>
       <div id="report-page">
-
         {/* Navbar */}
         <nav id="report-nav">
           <div
@@ -111,18 +109,11 @@ export default function Report() {
 
         {/* Report Cards */}
         <div id="report-cards">
-
           {/* LEFT - Camera */}
           <div className="report-card" id="upload-card">
-
             <div id="camera-preview">
-
               {image ? (
-                <img
-                  src={image}
-                  alt="Captured pothole"
-                  id="upload-preview"
-                />
+                <img src={image} alt="Captured pothole" id="upload-preview" />
               ) : (
                 <>
                   <video
@@ -165,22 +156,16 @@ export default function Report() {
                       </svg>
 
                       <p>Capture pothole image</p>
-                      <span>
-                        Use your camera to capture road damage
-                      </span>
+                      <span>Use your camera to capture road damage</span>
                     </div>
                   )}
                 </>
               )}
-
             </div>
 
-            {cameraError && (
-              <p className="camera-error">{cameraError}</p>
-            )}
+            {cameraError && <p className="camera-error">{cameraError}</p>}
 
             <div className="camera-controls">
-
               {!cameraActive && !image && (
                 <button id="camera-btn" onClick={startCamera}>
                   <span>◎</span> Start Camera
@@ -193,10 +178,7 @@ export default function Report() {
                     <span>◎</span> Capture Photo
                   </button>
 
-                  <button
-                    className="retake-btn"
-                    onClick={stopCamera}
-                  >
+                  <button className="retake-btn" onClick={stopCamera}>
                     Stop Camera
                   </button>
                 </>
@@ -208,21 +190,16 @@ export default function Report() {
                     Retake Photo
                   </button>
 
-                  <button
-                    className="retake-btn"
-                    onClick={() => setImage(null)}
-                  >
+                  <button className="retake-btn" onClick={() => setImage(null)}>
                     Remove Photo
                   </button>
                 </>
               )}
-
             </div>
           </div>
 
           {/* RIGHT - Form */}
           <div className="report-card" id="form-card">
-
             {/* Location */}
             <div className="field-group">
               <label className="field-label">Location</label>
@@ -252,6 +229,25 @@ export default function Report() {
                 </div>
 
                 <button id="location-btn" type="button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-locate-fixed preview-icon"
+                  >
+                    <line x1="2" x2="5" y1="12" y2="12" />
+                    <line x1="19" x2="22" y1="12" y2="12" />
+                    <line x1="12" x2="12" y1="2" y2="5" />
+                    <line x1="12" x2="12" y1="19" y2="22" />
+                    <circle cx="12" cy="12" r="7" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
                   Use my location
                 </button>
               </div>
@@ -298,16 +294,12 @@ export default function Report() {
               Submit Report
             </button>
 
-            <p id="no-account">
-              No account needed to submit a report.
-            </p>
-
+            <p id="no-account">No account needed to submit a report.</p>
           </div>
         </div>
 
         {/* Feature Strip */}
         <div id="feature-strip">
-
           <div className="feature-item">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
               <path
@@ -315,14 +307,18 @@ export default function Report() {
                 stroke="#a855f7"
                 strokeWidth="1.8"
               />
-              <circle cx="12" cy="9" r="2.5" stroke="#a855f7" strokeWidth="1.8" />
+              <circle
+                cx="12"
+                cy="9"
+                r="2.5"
+                stroke="#a855f7"
+                strokeWidth="1.8"
+              />
             </svg>
 
             <div>
               <p className="fi-title">GPS Location</p>
-              <p className="fi-sub">
-                Captures exact location & timestamp
-              </p>
+              <p className="fi-sub">Captures exact location & timestamp</p>
             </div>
           </div>
 
@@ -335,18 +331,12 @@ export default function Report() {
                 stroke="#a855f7"
                 strokeWidth="1.8"
               />
-              <path
-                d="M9 12l2 2 4-4"
-                stroke="#a855f7"
-                strokeWidth="1.8"
-              />
+              <path d="M9 12l2 2 4-4" stroke="#a855f7" strokeWidth="1.8" />
             </svg>
 
             <div>
               <p className="fi-title">AI Verification</p>
-              <p className="fi-sub">
-                Checks image authenticity & duplicates
-              </p>
+              <p className="fi-sub">Checks image authenticity & duplicates</p>
             </div>
           </div>
 
@@ -369,7 +359,6 @@ export default function Report() {
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </PageTransition>
